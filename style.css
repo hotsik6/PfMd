@@ -1,0 +1,279 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            position: relative;
+            background: linear-gradient(to bottom, #ffe4ec, #fff5f8);
+            overflow-x: hidden;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            min-height: 100vh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: clamp(42px, 10vw, 80px);
+            color: #ff4f87;
+            text-shadow: 0 0 20px rgba(255, 79, 135, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+
+        header p {
+            width: 100%;
+            margin-top: 25px;
+            font-size: 24px;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            margin-top: 40px;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 20px;
+            background: #ff4f87;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 79, 135, 0.3);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #ff2d6f;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 79, 135, 0.3);
+            }
+            to {
+                text-shadow: 0 0 40px rgba(255, 79, 135, 0.8);
+            }
+        }
+
+        .gallery {
+            width: 100%;
+            padding: 100px 40px;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 55px;
+            color: #ff4f87;
+            margin-bottom: 60px;
+        }
+
+        .photos {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: 0.5s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .caption {
+            padding: 25px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .letter {
+            padding: 100px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .letter-box {
+            width: 100%;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 40px 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .letter-box h2 {
+            font-size: 50px;
+            color: #ff4f87;
+            margin-bottom: 40px;
+        }
+
+        .letter-box p {
+            font-size: 28px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 20px;
+            color: #777;
+        }
+
+        .heart {
+            position: fixed;
+            top: -20px;
+            color: #ff4f87;
+            font-size: 20px;
+            animation: fall linear forwards;
+            z-index: 999;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        button {
+            touch-action: manipulation;
+        }
+
+        @media(max-width: 768px) {
+            header h1 {
+                font-size: 42px;
+            }
+
+            header p,
+            .final p,
+            .letter-box p {
+                font-size: 18px;
+                line-height: 1.7;
+            }
+
+            .final h2,
+            .gallery h2,
+            .letter-box h2 {
+                font-size: 34px;
+            }
+        
+            .gallery {
+                padding: 70px 20px;
+            }
+
+            .card {
+                border-radius: 24px;
+            }
+
+            .card img {
+                height: 260px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+                font-size: 18px;
+                padding: 16px 20px;
+            }
+
+            .letter {
+                padding: 60px 15px;
+            }
+
+            .final {
+                padding: 80px 20px;
+            }
+        }
+            .tulips {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .tulip {
+            position: absolute;
+            font-size: 45px;
+            opacity: 0.22;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .left-tulips .tulip {
+            left: 10px;
+        }
+
+        .right-tulips .tulip {
+            right: 10px;
+        }
+
+        .t1 { top: 5%; }
+        .t2 { top: 15%; }
+        .t3 { top: 25%; }
+        .t4 { top: 35%; }
+        .t5 { top: 45%; }
+        .t6 { top: 55%; }
+        .t7 { top: 65%; }
+        .t8 { top: 75%; }
+        .t9 { top: 85%; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(3deg);
+            }
+        }
+
+        @media(max-width: 768px) {
+            .tulip {
+                font-size: 28px;
+                opacity: 0.16;
+            }
+        }
